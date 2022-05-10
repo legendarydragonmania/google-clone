@@ -1,11 +1,19 @@
 import './App.css'
 import Home from './pages/Home'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Error from './pages/Error'
+import Results from './pages/Results'
 
 function App() {
   return (
     <div className='app'>
-      <h1>Let's build the Google Clone🚀🚀🚀</h1>
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/results' element={<Results />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
